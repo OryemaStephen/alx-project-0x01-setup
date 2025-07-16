@@ -5,7 +5,7 @@ import { PostData, PostProps, PostsPageProps } from "@/interfaces";
 import React, { useState } from "react";
 
 const Posts: React.FC<PostsPageProps> = ({ posts }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
   const [post, setPost] = useState<PostData | null>(null);
 
   const handleAddPost = (newPost: PostData) => {
@@ -18,7 +18,7 @@ const Posts: React.FC<PostsPageProps> = ({ posts }) => {
       <main className="p-4">
         <div className="flex justify-between">
           <h1 className="text-2xl font-semibold">Post Content</h1>
-          <button onClick={()=>setIsModalOpen(true)} className="bg-blue-700 px-4 py-2 rounded-full text-white">
+          <button onClick={()=>setModalOpen(true)} className="bg-blue-700 px-4 py-2 rounded-full text-white">
             Add Post
           </button>
         </div>
@@ -36,7 +36,7 @@ const Posts: React.FC<PostsPageProps> = ({ posts }) => {
       </main>
       {
         isModalOpen && (
-            <PostModal onSubmit={handleAddPost} onClose={()=>setIsModalOpen(false)} />
+            <PostModal onSubmit={handleAddPost} onClose={()=>setModalOpen(false)} />
         )
       }
     </div>

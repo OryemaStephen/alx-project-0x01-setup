@@ -54,3 +54,19 @@ export interface UserProps {
 export interface UsersPageProps {
   users: UserProps[];
 }
+
+export interface UserData {
+  id?: number;
+  name: string;
+  username: string;
+  email: string;
+  company: CompanyProps;
+  address: AddressProps;
+  phone: string;
+  website: string;
+}       
+
+export interface UserModalProps {
+  onClose: () => void;
+  onSubmit: (user: UserData) => void;
+}   

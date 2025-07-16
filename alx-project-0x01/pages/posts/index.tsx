@@ -1,6 +1,6 @@
 import PostCard from "@/components/common/PostCard";
 import Header from "@/components/layout/Header";
-import { PostsPageProps } from "@/interfaces";
+import { PostProps, PostsPageProps } from "@/interfaces";
 import React from "react";
 
 const Posts: React.FC<PostsPageProps> = ({ posts }) => {
@@ -16,7 +16,7 @@ const Posts: React.FC<PostsPageProps> = ({ posts }) => {
           </button>
         </div>
         <div className="grid grid-cols-3 gap-2">
-          {posts?.map((post) => (
+          {posts?.map((post: PostProps) => (
             <PostCard
               title={post.title}
               key={post.id}
